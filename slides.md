@@ -95,7 +95,7 @@ level: 2
 # Who am I?
 
 <span v-mark.underline.orange>
-  간결한 코드로 안정적으로 동작하는 프로그램을 좋아하는 프론트엔드 개발자입니다.
+  간결한 코드로 안정적으로 동작하는 프로그램을 좋아하는 3년차 프론트엔드 개발자입니다.
 </span>
 
 <br>
@@ -146,7 +146,7 @@ layout: two-cols
 <arrow v-if="$slidev.nav.clicks === 3" x1="120" y1="450" x2="175" y2="310" color="#953" width="2" arrowSize="1" />
 
 <div class='absolute bottom-5 p-5 border border-white rounded' v-if="$slidev.nav.clicks === 1">
-근데 저 아무리 봐도 J가 아니라 P인거 같아요. 그래서 그냥 엔팁으로 살려고요
+근데 저 아무리 봐도 J가 아니라 P인거 같아요. 그래서 그냥 엔팁으로 살려고요.
 </div>
 
 <div class='absolute bottom-5 p-5 border border-white rounded' v-if="$slidev.nav.clicks === 2">
@@ -154,7 +154,7 @@ layout: two-cols
 </div>
 
 <div class='absolute bottom-5 p-5 border border-white rounded' v-if="$slidev.nav.clicks === 3">
-치킨의 왕은 KFC이며, 오리지널 치킨은 그 정통한 계승자이다. 반박은 받지 않습니다
+치킨의 왕은 KFC이며, 오리지널 치킨은 그 정통한 계승자이다. 반박은 받지 않습니다.
 </div>
 
 
@@ -183,183 +183,169 @@ layout: two-cols
 
   
 </style>
-
----
-layout: image-right
-image: https://cover.sli.dev
 ---
 
-# Simple TMI about Me!
+# 저는 이런 기술을 가지고 있습니다!
 
-Use code snippets and get the highlighting directly, and even types hover!
 
-```ts {all|5|7|7-8|10|all} twoslash
-// TwoSlash enables TypeScript hover information
-// and errors in markdown code blocks
-// More at https://shiki.style/packages/twoslash
-
-import { computed, ref } from "vue";
-
-const count = ref(0);
-const doubled = computed(() => count.value * 2);
-
-doubled.value = 2;
-```
-
-<arrow v-click="[4, 5]" x1="350" y1="310" x2="195" y2="334" color="#953" width="2" arrowSize="1" />
-
-<!-- This allow you to embed external code blocks -->
-
-<<< @/snippets/external.ts#snippet
-
-<!-- Footer -->
-
-[Learn more](https://sli.dev/features/line-highlighting)
-
-<!-- Inline style -->
-<style>
-.footnotes-sep {
-  @apply mt-5 opacity-10;
-}
-.footnotes {
-  @apply text-sm opacity-75;
-}
-.footnote-backref {
-  display: none;
-}
-</style>
-
-<!--
-Notes can also sync with clicks
-
-[click] This will be highlighted after the first click
-
-[click] Highlighted with `count = ref(0)`
-
-[click:3] Last click (skip two clicks)
--->
-
----
-
-## level: 2
-
-# Shiki Magic Move
-
-Powered by [shiki-magic-move](https://shiki-magic-move.netlify.app/), Slidev supports animations across multiple code snippets.
-
-Add multiple code blocks and wrap them with <code>````md magic-move</code> (four backticks) to enable the magic move. For example:
 
 ````md magic-move {lines: true}
-```ts {*|2|*}
-// step 1
-const author = reactive({
-  name: "John Doe",
-  books: [
-    "Vue 2 - Advanced Guide",
-    "Vue 3 - Basic Guide",
-    "Vue 4 - The Mystery",
-  ],
-});
-```
-
-```ts {*|1-2|3-4|3-4,8}
-// step 2
+```ts {1,3-8}
+// 이런 언어들을 주로 다루고
 export default {
-  data() {
-    return {
-      author: {
-        name: "John Doe",
-        books: [
-          "Vue 2 - Advanced Guide",
-          "Vue 3 - Basic Guide",
-          "Vue 4 - The Mystery",
-        ],
-      },
-    };
-  },
-};
+  language(){
+    return [
+      "typescript",
+      "python"
+    ]
+  }
+}
 ```
 
-```ts
-// step 3
+
+```ts {1,3-9}
+// 이런 라이브러리들를 좋아하며,
 export default {
-  data: () => ({
-    author: {
-      name: "John Doe",
-      books: [
-        "Vue 2 - Advanced Guide",
-        "Vue 3 - Basic Guide",
-        "Vue 4 - The Mystery",
-      ],
-    },
-  }),
-};
+  libs(){
+    return [
+      "react",
+      "storybook",
+      "visx",
+      "ramda.js"
+    ]
+  }
+}
 ```
 
-Non-code blocks are ignored.
-
-```vue
-<!-- step 4 -->
-<script setup>
-const author = {
-  name: "John Doe",
-  books: [
-    "Vue 2 - Advanced Guide",
-    "Vue 3 - Basic Guide",
-    "Vue 4 - The Mystery",
-  ],
-};
-</script>
+```ts {1,3-10}
+// 이런 기술들에 관심이 많습니다!
+export default {
+  tools(){
+    return [
+      "docker",
+      "WebGL",
+      "AWS",
+      "Neovim"
+    ]
+  }
+}
 ```
+
+
+
 ````
 
 ---
 
-# Components
+# 오픈소스 활동들
+##### 제 오픈소스 활동들을 소개합니다.
 
-<div grid="~ cols-2 gap-4">
-<div>
+<br/>
+<v-switch>
+  <template #0>
+    <div>
+      <strong>sb-addon-permutation-table</strong>
+      <div class="flex gap-8">
+        <div class="image-layout">
+          <img class="image-container" src="/assets/images/demo-sb.gif" />
+        </div>
+        <div class="flex flex-col basis-1/2">
+          <div class="flex grow">
+          <ul>
+            <li>컴포넌트의 형상들을 하나의 스토리에서 볼 수 있게 해주는 storybook 애드온</li>
+            <li>Storybook community addon 선정</li>
+          </ul>
+          </div>
+          <div class="border-t border-white">
+            <a href="https://www.npmjs.com/package/sb-addon-permutation-table" target="_blank" class="slidev-icon-btn">
+              <carbon:logo-npm />
+            </a>
+            <a href="https://daimresearch.github.io/sb-addon-permutation-table/?path=/docs/introduction--docs" target="_blank" class="slidev-icon-btn">
+              <carbon:demo />
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </template>
 
-You can use Vue components directly inside your slides.
+  <template #1>
+    <div>
+      <strong>cheesy-stories</strong>
+      <div class="flex gap-8">
+        <div class="image-layout">
+          <img class="image-container" src="/assets/images/demo-chessy.gif" />
+        </div>
+        <div class="flex flex-col basis-1/2">
+          <div class="flex grow">
+          <ul>
+            <li>Story의 width를 인터렉티브하게 조절할 수 있는 stroybook 애드온</li>
+            <li>width change에 따라 변경되는 형상을 빠르게 확인 가능</li>
+          </ul>
+          </div>
+          <div class='border-t border-white'>
+            <a href="https://github.com/SpookyJelly/cheesy-stories" target="_blank" class="slidev-icon-btn">
+              <carbon:logo-npm />
+            </a>
+            <a href="https://spookyjelly.github.io/cheesy-stories/" target="_blank" class="slidev-icon-btn">
+              <carbon:demo />
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </template>
 
-We have provided a few built-in components like `<Tweet/>` and `<Youtube/>` that you can use directly. And adding your custom components is also super easy.
+  <template #2>
+    <div>
+      <strong>applejelly</strong>
+      <div class="flex gap-8">
+        <div class="image-layout">
+          <img class="image-container" src="/assets/images/demo-aj.png" />
+        </div>
+        <div class="flex flex-col basis-1/2">
+          <div class="flex grow">
+          <ul>
+            <li>Datadog의 DRUIDS에 영감을 받은 컴포넌트 라이브러리</li>
+            <li>🔥Now in progress🔥</li>
+          </ul>
+          </div>
+          <div class='border-t border-white'>
+            <a href="https://www.npmjs.com/package/applejelly" target="_blank" class="slidev-icon-btn">
+              <carbon:logo-npm />
+            </a>
+            <a href="https://spookyjelly.github.io/applejelly/?path=/docs/introduction--docs" target="_blank" class="slidev-icon-btn">
+              <carbon:demo />
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </template>
+</v-switch>
 
-```html
-<Counter :count="10" />
-```
 
-<!-- ./components/Counter.vue -->
-<Counter :count="10" m="t-4" />
+<style>
 
-Check out [the guides](https://sli.dev/builtin/components.html) for more.
+.image-container{
+  width: 100%;
+  height: 30vh;
+  object-fit: contain;
+  border-radius: 8px;
+}
+.image-layout{
+  width:50%;
+}
 
-</div>
-<div>
-
-```html
-<Tweet id="1390115482657726468" />
-```
-
-<Tweet id="1390115482657726468" scale="0.65" />
-
-</div>
-</div>
-
-<!--
-Presenter note with **bold**, *italic*, and ~~striked~~ text.
-
-Also, HTML elements are valid:
-<div class="flex w-full">
-  <span style="flex-grow: 1;">Left content</span>
-  <span>Right content</span>
-</div>
--->
-
+  
+</style>
 ---
 ## class: px-20
 ---
 
-# Themes
+# 포트로직스에서 이루고 싶은 것들
+
+
 
 Slidev comes with powerful theming support. Themes can provide styles, layouts, components, or even configurations for tools. Switching between themes by just **one edit** in your frontmatter:
 
