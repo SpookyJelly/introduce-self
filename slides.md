@@ -139,21 +139,21 @@ layout: two-cols
   </ol>
 </div>
 
-<arrow v-click="[1]" x1="120" y1="450" x2="175" y2="170" color="#953" width="2" arrowSize="1" />
+<arrow v-if="$slidev.nav.clicks === 1" x1="120" y1="450" x2="175" y2="170" color="#953" width="2" arrowSize="1" />
 
-<arrow v-click="[2]" x1="120" y1="450" x2="175" y2="250" color="#953" width="2" arrowSize="1" />
+<arrow v-if="$slidev.nav.clicks === 2" x1="120" y1="450" x2="175" y2="250" color="#953" width="2" arrowSize="1" />
 
-<arrow v-click="[3]" x1="120" y1="450" x2="175" y2="310" color="#953" width="2" arrowSize="1" />
+<arrow v-if="$slidev.nav.clicks === 3" x1="120" y1="450" x2="175" y2="310" color="#953" width="2" arrowSize="1" />
 
-<div class='absolute bottom-5 p-5 border border-white rounded' v-click="[1]">
+<div class='absolute bottom-5 p-5 border border-white rounded' v-if="$slidev.nav.clicks === 1">
 근데 저 아무리 봐도 J가 아니라 P인거 같아요. 그래서 그냥 엔팁으로 살려고요
 </div>
 
-<div class='absolute bottom-5 p-5 border border-white rounded' v-click="[2]">
+<div class='absolute bottom-5 p-5 border border-white rounded' v-if="$slidev.nav.clicks === 2">
 운동 (웨이트 트레이닝)은 매일 꾸준히 하고 있고, 게임은 AAA급 게임, 인디게임 가리지 않고 즐깁니다. 같이 하고 싶으신분 (운동이든 게임이든)은 편하게 말해주세요!
 </div>
 
-<div class='absolute bottom-5 p-5 border border-white rounded' v-click="[3]">
+<div class='absolute bottom-5 p-5 border border-white rounded' v-if="$slidev.nav.clicks === 3">
 치킨의 왕은 KFC이며, 오리지널 치킨은 그 정통한 계승자이다. 반박은 받지 않습니다
 </div>
 
