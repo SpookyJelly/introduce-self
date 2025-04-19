@@ -25,12 +25,32 @@ fonts:
 ---
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap');
+@font-face {
+  font-family: 'Nanum Pen Script';
+  src: url('/assets/fonts/NanumPenScript-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: 'Nanum Pen Script', 'Arial', sans-serif;
+}
+
+h1 {
+  background-color: #2B90B6;
+  background-image: linear-gradient(45deg, #4EC5D4 10%, #146b8c 20%);
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+}
+
 </style>
 
   <!-- 상단 (고정 높이) -->
-  <div class="absolute top-0 inset-x-0 p-2 ">
-    <h2>안녕하세요 저는</h2>
+  <div class="absolute top-0 text-2xl inset-x-0 p-2 color-white">
+    <span>안녕하세요 저는</span>
   </div>
   
   <!-- 중앙 (유연한 확장) -->
@@ -59,7 +79,7 @@ The last comment block of each slide will be treated as slide notes. It will be 
 level: 2
 ---
 
-## 조작법
+# 조작법
 
 좌하단에 호버되는 컨트롤 패널 혹은 아래의 키보드 단축키를 이용해보세요😆😆
 
@@ -97,17 +117,6 @@ You can have `style` tag in markdown to override the style for the current page.
 Learn more: https://sli.dev/features/slide-scope-style
 -->
 
-<style>
-h1 {
-  background-color: #2B90B6;
-  background-image: linear-gradient(45deg, #4EC5D4 10%, #146b8c 20%);
-  background-size: 100%;
-  -webkit-background-clip: text;
-  -moz-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -moz-text-fill-color: transparent;
-}
-</style>
 
 <!--
 Here is another comment.
@@ -130,7 +139,11 @@ layout: two-cols
   </ol>
 </div>
 
-<!-- <arrow v-click="[2]" x1="350" y1="310" x2="195" y2="334" color="#953" width="2" arrowSize="1" /> -->
+<arrow v-click="[1]" x1="120" y1="450" x2="175" y2="170" color="#953" width="2" arrowSize="1" />
+
+<arrow v-click="[2]" x1="120" y1="450" x2="175" y2="250" color="#953" width="2" arrowSize="1" />
+
+<arrow v-click="[3]" x1="120" y1="450" x2="175" y2="310" color="#953" width="2" arrowSize="1" />
 
 <div class='absolute bottom-5 p-5 border border-white rounded' v-click="[1]">
 근데 저 아무리 봐도 J가 아니라 P인거 같아요. 그래서 그냥 엔팁으로 살려고요
@@ -147,14 +160,29 @@ layout: two-cols
 
 ::right::
 
-# Right
+<div class="relative">
+  <!-- 첫 번째 이미지 -->
+  <img v-if="$slidev.nav.clicks === 1"
+  src="/assets/images/mbti.jpg" alt="Image 1" class="image-container" />
 
+  <!-- 두 번째 이미지 -->
+  <img v-if="$slidev.nav.clicks === 2" src="/assets/images/steam.png" alt="Image 2" class="image-container" />
 
+  <!-- 세 번째 이미지 -->
+  <img v-if="$slidev.nav.clicks === 3" src="/assets/images/favor.png" alt="Image 3" class="image-container" />
+</div>
 
-<img src="https://cover.sli.dev" alt="Dynamic Image" class="rounded shadow-lg" v-click="[1]" />
+<style>
 
+.image-container{
+  width: 100%;
+  height: 58vh;
+  object-fit: contain;
+  border-radius: 8px;
+}
 
-
+  
+</style>
 
 ---
 layout: image-right
