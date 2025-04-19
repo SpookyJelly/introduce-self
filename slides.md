@@ -1,6 +1,6 @@
 ---
 # You can also start simply with 'default'
-theme: seriph
+theme: dracula
 # random image from a curated Unsplash collection by Anthony
 # like them? see https://unsplash.com/collections/94734566/slidev
 background: https://cover.sli.dev
@@ -19,9 +19,9 @@ transition: slide-left
 mdc: true
 class: text-center
 fonts:
-  mono: 'Noto Sans Mono'
-  sans: 'Nanum Pen Script'
-  serif: 'Nanum Pen Script'
+  mono: "Noto Sans Mono"
+  sans: "Nanum Pen Script"
+  serif: "Nanum Pen Script"
 ---
 
 <style>
@@ -56,6 +56,21 @@ The last comment block of each slide will be treated as slide notes. It will be 
 -->
 
 ---
+level: 2
+---
+
+## 조작법
+
+좌하단에 호버되는 컨트롤 패널 혹은 아래의 키보드 단축키를 이용해보세요😆😆
+
+|                                                    |                             |
+| -------------------------------------------------- | --------------------------- |
+| <kbd>right</kbd> / <kbd>space</kbd>                | 다음 애니메이션 혹은 슬라이드로로     |
+| <kbd>left</kbd> / <kbd>shift</kbd><kbd>space</kbd> | 이전 애니메이션 혹은 슬라이드로로|
+| <kbd>up</kbd>                                      | 이전 슬라이드로로             |
+| <kbd>down</kbd>                                    | 다음 슬라이드로                 
+
+---
 
 # Who am I?
 
@@ -75,7 +90,7 @@ The last comment block of each slide will be treated as slide notes. It will be 
   <br>
   <br>
 
-입니다.
+이기도 하고요!
 
 <!--
 You can have `style` tag in markdown to override the style for the current page.
@@ -97,67 +112,56 @@ h1 {
 <!--
 Here is another comment.
 -->
-
 ---
-
-transition: slide-up
-level: 2
-
----
-
-# Navigation
-
-Hover on the bottom-left corner to see the navigation's controls panel, [learn more](https://sli.dev/guide/ui#navigation-bar)
-
-## Keyboard Shortcuts
-
-|                                                    |                             |
-| -------------------------------------------------- | --------------------------- |
-| <kbd>right</kbd> / <kbd>space</kbd>                | next animation or slide     |
-| <kbd>left</kbd> / <kbd>shift</kbd><kbd>space</kbd> | previous animation or slide |
-| <kbd>up</kbd>                                      | previous slide              |
-| <kbd>down</kbd>                                    | next slide                  |
-
-<!-- https://sli.dev/guide/animations.html#click-animation -->
-
-<img
-  v-click
-  class="absolute -bottom-9 -left-7 w-80 opacity-50"
-  src="https://sli.dev/assets/arrow-bottom-left.svg"
-  alt=""
-/>
-
-<p v-after class="absolute bottom-23 left-45 opacity-30 transform -rotate-10">Here!</p>
-
----
-
 layout: two-cols
-layoutClass: gap-16
-
 ---
 
-# Table of contents
 
-You can use the `Toc` component to generate a table of contents for your slides:
+# 작은 TMI들
 
-```html
-<Toc minDepth="1" maxDepth="1" />
-```
 
-The title will be inferred from your slide content, or you can override it with `title` and `level` in your frontmatter.
+<div class='text-2xl'>
+  <ol>
+    <li class='m-8'>MBTI: <span v-mark.circle.orange='1'> ENTJ </span> </li>
+    <li class='m-8'>취미 : <span v-mark.circle.orange='2'>운동, 게임</span></li>
+    <li class='m-8'>최애 치킨 : 
+   <span v-mark.circle.orange='3'>KFC 오리지널</span> 
+    </li>
+  </ol>
+</div>
+
+<!-- <arrow v-click="[2]" x1="350" y1="310" x2="195" y2="334" color="#953" width="2" arrowSize="1" /> -->
+
+<div class='absolute bottom-5 p-5 border border-white rounded' v-click="[1]">
+근데 저 아무리 봐도 J가 아니라 P인거 같아요. 그래서 그냥 엔팁으로 살려고요
+</div>
+
+<div class='absolute bottom-5 p-5 border border-white rounded' v-click="[2]">
+운동 (웨이트 트레이닝)은 매일 꾸준히 하고 있고, 게임은 AAA급 게임, 인디게임 가리지 않고 즐깁니다. 같이 하고 싶으신분 (운동이든 게임이든)은 편하게 말해주세요!
+</div>
+
+<div class='absolute bottom-5 p-5 border border-white rounded' v-click="[3]">
+치킨의 왕은 KFC이며, 오리지널 치킨은 그 정통한 계승자이다. 반박은 받지 않습니다
+</div>
+
 
 ::right::
 
-<Toc text-sm minDepth="1" maxDepth="2" />
+# Right
+
+
+
+<img src="https://cover.sli.dev" alt="Dynamic Image" class="rounded shadow-lg" v-click="[1]" />
+
+
+
 
 ---
-
 layout: image-right
 image: https://cover.sli.dev
-
 ---
 
-# Code
+# Simple TMI about Me!
 
 Use code snippets and get the highlighting directly, and even types hover!
 
@@ -166,7 +170,7 @@ Use code snippets and get the highlighting directly, and even types hover!
 // and errors in markdown code blocks
 // More at https://shiki.style/packages/twoslash
 
-import { computed, ref } from 'vue';
+import { computed, ref } from "vue";
 
 const count = ref(0);
 const doubled = computed(() => count.value * 2);
@@ -221,11 +225,11 @@ Add multiple code blocks and wrap them with <code>````md magic-move</code> (four
 ```ts {*|2|*}
 // step 1
 const author = reactive({
-  name: 'John Doe',
+  name: "John Doe",
   books: [
-    'Vue 2 - Advanced Guide',
-    'Vue 3 - Basic Guide',
-    'Vue 4 - The Mystery',
+    "Vue 2 - Advanced Guide",
+    "Vue 3 - Basic Guide",
+    "Vue 4 - The Mystery",
   ],
 });
 ```
@@ -236,11 +240,11 @@ export default {
   data() {
     return {
       author: {
-        name: 'John Doe',
+        name: "John Doe",
         books: [
-          'Vue 2 - Advanced Guide',
-          'Vue 3 - Basic Guide',
-          'Vue 4 - The Mystery',
+          "Vue 2 - Advanced Guide",
+          "Vue 3 - Basic Guide",
+          "Vue 4 - The Mystery",
         ],
       },
     };
@@ -253,11 +257,11 @@ export default {
 export default {
   data: () => ({
     author: {
-      name: 'John Doe',
+      name: "John Doe",
       books: [
-        'Vue 2 - Advanced Guide',
-        'Vue 3 - Basic Guide',
-        'Vue 4 - The Mystery',
+        "Vue 2 - Advanced Guide",
+        "Vue 3 - Basic Guide",
+        "Vue 4 - The Mystery",
       ],
     },
   }),
@@ -270,11 +274,11 @@ Non-code blocks are ignored.
 <!-- step 4 -->
 <script setup>
 const author = {
-  name: 'John Doe',
+  name: "John Doe",
   books: [
-    'Vue 2 - Advanced Guide',
-    'Vue 3 - Basic Guide',
-    'Vue 4 - The Mystery',
+    "Vue 2 - Advanced Guide",
+    "Vue 3 - Basic Guide",
+    "Vue 4 - The Mystery",
   ],
 };
 </script>
@@ -324,8 +328,8 @@ Also, HTML elements are valid:
 -->
 
 ---
-
 ## class: px-20
+---
 
 # Themes
 
@@ -574,41 +578,39 @@ database "MySql" {
 Learn more: [Mermaid Diagrams](https://sli.dev/features/mermaid) and [PlantUML Diagrams](https://sli.dev/features/plantuml)
 
 ---
-
 foo: bar
 dragPos:
 square: 691,32,167,\_,-16
-
 ---
-
 dragPos:
 square: -17,0,0,0
-
 ---
-
 dragPos:
 square: -17,0,0,0
-
 ---
-
 dragPos:
 square: 0,-676,0,0
-
 ---
-
 dragPos:
 square: -17,0,0,0
-
 ---
-
 dragPos:
 square: -17,0,0,0
-
 ---
-
 dragPos:
 square: -17,0,0,0
-
+---
+dragPos:
+square: 0,-206,0,0
+---
+dragPos:
+square: 0,-206,0,0
+---
+dragPos:
+  square: 0,-277,0,0
+---
+dragPos:
+  square: 0,-260,0,0
 ---
 
 # Draggable Elements
@@ -634,7 +636,7 @@ Double-click on the draggable elements to edit their positions.
 </v-drag>
 ```
 
-<v-drag pos="663,206,261,_,-15">
+<v-drag pos="588,58,261,_,-15">
   <div text-center text-3xl border border-main rounded>
     Double-click me!
   </div>
@@ -648,14 +650,13 @@ Double-click on the draggable elements to edit their positions.
 <v-drag-arrow two-way />
 ```
 
-<v-drag-arrow pos="67,452,253,46" two-way op70 />
+<v-drag-arrow pos="120,221,555,4" two-way op70 />
 
 ---
-
 src: ./pages/imported-slides.md
 hide: false
-
 ---
+
 
 ---
 
@@ -666,8 +667,8 @@ Slidev provides built-in Monaco Editor support.
 Add `{monaco}` to the code block to turn it into an editor:
 
 ```ts {monaco}
-import { ref } from 'vue';
-import { emptyArray } from './external';
+import { ref } from "vue";
+import { emptyArray } from "./external";
 
 const arr = ref(emptyArray(10));
 ```
@@ -675,8 +676,8 @@ const arr = ref(emptyArray(10));
 Use `{monaco-run}` to create an editor that can execute the code directly in the slide:
 
 ```ts {monaco-run}
-import { version } from 'vue';
-import { emptyArray, sayHello } from './external';
+import { version } from "vue";
+import { emptyArray, sayHello } from "./external";
 
 sayHello();
 console.log(`vue ${version}`);
@@ -689,10 +690,8 @@ console.log(
 ```
 
 ---
-
 layout: center
 class: text-center
-
 ---
 
 # Learn More
