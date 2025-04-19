@@ -3,7 +3,7 @@
 theme: dracula
 # random image from a curated Unsplash collection by Anthony
 # like them? see https://unsplash.com/collections/94734566/slidev
-background: /public/myself.jpg
+background: /myself.jpg
 # some information about your slides (markdown enabled)
 title: 이동윤, 자기소개
 info: |
