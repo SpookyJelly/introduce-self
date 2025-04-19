@@ -3,7 +3,7 @@
 theme: dracula
 # random image from a curated Unsplash collection by Anthony
 # like them? see https://unsplash.com/collections/94734566/slidev
-background: https://cover.sli.dev
+background: /assets/images/myself.jpg
 # some information about your slides (markdown enabled)
 title: 이동윤, 자기소개
 info: |
@@ -89,6 +89,12 @@ level: 2
 | <kbd>left</kbd> / <kbd>shift</kbd><kbd>space</kbd> | 이전 애니메이션 혹은 슬라이드로|
 | <kbd>up</kbd>                                      | 이전 슬라이드로             |
 | <kbd>down</kbd>                                    | 다음 슬라이드로                 
+
+---
+---
+# Table of contents
+
+<Toc text-xl minDepth="1" maxDepth="2" />
 
 ---
 
